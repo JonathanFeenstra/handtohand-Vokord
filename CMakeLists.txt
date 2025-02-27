@@ -31,7 +31,7 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>" CACHE STR
 # ---- Project ----
 
 project(
-	HandToHand
+	HandToHandVokord
 	VERSION 1.0.0
 	LANGUAGES CXX
 )
@@ -89,7 +89,6 @@ find_package(spdlog REQUIRED CONFIG)
 set(SOURCES
 	src/main.cpp
 	src/PCH.h
-	src/PickpocketReplace.h
 	src/Settings.h
 	src/Events.h
 )
@@ -176,6 +175,7 @@ if (MSVC)
 
 			/W4	# Warning level
 			/WX	# Warning level (warnings are errors)
+			/wd4996 # ignore https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4996?view=msvc-170
 
 			"$<$<CONFIG:DEBUG>:>"
 			"$<$<CONFIG:RELEASE>:/Zc:inline;/JMC-;/Ob3>"

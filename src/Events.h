@@ -62,11 +62,11 @@ namespace Events
 		{
 			auto player = RE::PlayerCharacter::GetSingleton();
 
-			float HandToHandLevel = player->AsActorValueOwner()->GetActorValue(RE::ActorValue::kLockpicking);
+			float HandToHandLevel = player->AsActorValueOwner()->GetActorValue(RE::ActorValue::kTwoHanded);
 
 			float baseXP = (Settings::BonusXPPerLevel * HandToHandLevel)+Settings::BaseXP;
 
-			player->AddSkillExperience(RE::ActorValue::kLockpicking, baseXP);	
+			player->AddSkillExperience(RE::ActorValue::kTwoHanded, baseXP);	
 		}
 
 		OnHitEventHandler() = default;

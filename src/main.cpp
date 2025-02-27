@@ -1,4 +1,3 @@
-#include "PickpocketReplace.h"
 #include "Events.h"
 
 void InitLogger()
@@ -41,7 +40,7 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface * 
 	a_info->version = Version::MAJOR;
 
 	if (a_skse->IsEditor()) {
-		logger::critical("Loaded in editor, marking as incompatible"sv);
+		// logger::critical("Loaded in editor, marking as incompatible"sv);
 		return false;
 	}
 
@@ -60,7 +59,7 @@ extern "C" DLLEXPORT constinit auto SKSEPlugin_Version =
 	SKSE::PluginVersionData v{};
 	v.PluginVersion(Version::MAJOR);
 	v.PluginName(Version::PROJECT);
-	v.AuthorName("colinswrath"sv);
+	v.AuthorName("colinswrath, Soulmancer, and Jonathan Feenstra"sv);
 	v.UsesAddressLibrary(true);
 	v.HasNoStructUse(true);
 	v.UsesStructsPost629(false);
@@ -73,7 +72,6 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Load(const SKSE::LoadInterface* a_s
 	InitLogger();
 	SKSE::Init(a_skse);
 	logger::info("Loading Hand to Hand");
-	PickpocketReplace::Install();
 	Settings::LoadSettings();
 	Events::Register();
 	logger::info("Hand to Hand loaded");
