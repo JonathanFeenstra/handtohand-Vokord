@@ -40,7 +40,7 @@ extern "C" DLLEXPORT bool SKSEAPI SKSEPlugin_Query(const SKSE::QueryInterface * 
 	a_info->version = Version::MAJOR;
 
 	if (a_skse->IsEditor()) {
-		// logger::critical("Loaded in editor, marking as incompatible"sv);
+		logger::critical("Loaded in editor, marking as incompatible");
 		return false;
 	}
 

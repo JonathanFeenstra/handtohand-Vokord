@@ -1,10 +1,6 @@
-This is a plugin written for the Adamant add-on called "Hand To Hand".
+This is a plugin written for [Vokord](https://www.nexusmods.com/skyrimspecialedition/mods/129564) based on [colinswrath's plugin for the Hand to Hand add-on for Adamant](https://github.com/colinswrath/handtohand).
  
--Redirects lockpick XP to Pickpocket (now called Security)
-
--Catches hand to hand hits and allocates XP to lockpick (Now hand to hand)
-
--Changes XP bar in lockpick menu to use pickpocket XP and level
+It catches hand to hand hits and allocates XP to Two Handed.
 
 ## Requirements
 * [CMake](https://cmake.org/)
@@ -18,7 +14,7 @@ This is a plugin written for the Adamant add-on called "Hand To Hand".
 ## Building
 ```
 git clone 
-cd HandToHand
+cd handtohand-Vokord
 git submodule update --init --recursive
 cmake -B build -S .
 ```
